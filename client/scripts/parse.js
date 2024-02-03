@@ -4,6 +4,8 @@
 
 var Parse = {
 
+
+
   server: `https://app-hrsei-api.herokuapp.com/api/chatterbox/messages/${window.CAMPUS}`,
 
   create: function(message, successCB, errorCB = null) {
@@ -35,7 +37,7 @@ var Parse = {
       url: Parse.server,
       type: 'GET',
       data: { order: '-createdAt' },
-      contentType: 'application/json',
+      contentType: 'X-Content-Type-Options',
       success: successCB,
       error: errorCB || function(error) {
         console.error('chatterbox: Failed to fetch messages', error);

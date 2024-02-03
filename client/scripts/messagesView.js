@@ -13,6 +13,7 @@ var MessagesView = {
 
     // Call render?
     // render();
+    // this.render()
 
   },
 
@@ -20,24 +21,37 @@ var MessagesView = {
     // TODO: Render _all_ the messages.
     // forEach message in ________ renderMessages
     // call renderMessage(message)
+    if($('#rooms select').val())
+
+    Messages._data.forEach(message => {
+      this.renderMessage(message)
+    })
   },
 
   renderMessage: function(message) {
+
+    this.$chats.html = ''
     // TODO: Render a single message.
 
-    var $message = $('<span></span>');
-    var $text = $(`<li>${message.text}</li>,`)
-    $message.append($text);
+    var $messageContainer = $(`<div class="messageContainer"></div>`)
+    var $textContainer = $(`<div class="textContainer">${message.text}</div>`)
+    var $userContainer = $(`<div class="textContainer">${message.username}</div>`)
 
-    var $username = $(`<li?>${message.username}</li?>`);
-    $username.addClass('username');
-    $username.on('click', function() {
-      Friends.toggleStatus();
-    })
+    $messageContainer.append($textContainer, $userContainer)
+    this.$chats.append($messageContainer)
+    // var $message = $('<span></span>');
+    // var $text = $(`<li>${message.text}</li>,`)
+    // $message.append($text);
 
-    $message.append($username);
+    // var $username = $(`<li?>${message.username}</li?>`);
+    // $username.addClass('username');
+    // $username.on('click', function() {
+    //   Friends.toggleStatus();
+    // })
 
-    this.$chats.prepend($message);
+    // $message.append($username);
+
+    // this.$chats.prepend($message);
     // var $message = $(<li>message[username]</li>)
     // li
     // message.username - hyperlink

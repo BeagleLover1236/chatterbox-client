@@ -5,7 +5,9 @@
 var Rooms = {
 
   // TODO: Define how you want to store the list of rooms
-  _data: {},
+  _data: null,
+
+
 
   add: function(room) {
     console.log('you added a room');
