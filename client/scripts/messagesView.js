@@ -43,6 +43,7 @@ var MessagesView = {
 
     var $messageContainer = $(`<div class="messageContainer"></div>`)
     var $userContainer = $(`<div class="userContainer">user: ${message.username}</div>`)
+    // templatedMessage = _.template(`<%-${message.text}%>!`)
     // $userContainer.on('click', function(
     //   this.css.style= {color : yellow};
     // ))
