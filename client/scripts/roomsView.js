@@ -23,13 +23,15 @@ var RoomsView = {
     var theseUniqueRooms = _.unique(rooms);
     for (var i = 0; i < theseUniqueRooms.length; i++) {
       this.renderRoom(theseUniqueRooms[i])
+      console.log(theseUniqueRooms[i])
     }
 
   },
 
   renderRoom: function(roomname) {
     // TODO: Render out a single room.
-    this.$select.append(`<option>${roomname}<option>`);
+    var select = $(`<option>${roomname}<option>`)
+    this.$select.append(select);
   },
 
   handleChange: function(event) {
