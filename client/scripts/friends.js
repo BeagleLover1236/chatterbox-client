@@ -9,6 +9,7 @@ var Friends = {
 
   toggleStatus : function() {
     console.log('yo');
+
   },
 
   add : function() {
