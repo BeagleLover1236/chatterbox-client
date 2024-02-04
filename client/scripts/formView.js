@@ -27,11 +27,13 @@ var FormView = {
     var newMessage = {
       username: App.username,
       text: $('#message').val(),
-      roomname: '???',
+      roomname: $('#rooms select').val(),
     };
 
     console.log(newMessage)
     Parse.create(newMessage);
+
+
     //POST this to the server
 
   },

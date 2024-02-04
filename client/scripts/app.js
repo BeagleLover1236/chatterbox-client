@@ -17,7 +17,8 @@ var App = {
 
     // Fetch initial batch of messages
     App.startSpinner();
-    App.fetch(App.stopSpinner);
+    App.fetch(App.stopSpinner)
+
 
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.

@@ -88,3 +88,12 @@ form input[type=text] {
     background-color: #0090da;
 }
 
+.userContainer {
+    background-color: lightgrey;
+    color: blue;
+}
+
+.roomContainer {
+    position: relative;
+    color: red;
+}

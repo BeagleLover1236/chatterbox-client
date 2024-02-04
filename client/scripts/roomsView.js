@@ -35,7 +35,8 @@ var RoomsView = {
   handleChange: function(event) {
     // TODO: Handle a user selecting a different room.
     console.log($('#rooms select').val());
-
+    $('#chats').children().remove()
+    MessagesView.render()
   },
 
   handleClick: function(event) {

@@ -21,23 +21,36 @@ var MessagesView = {
     // TODO: Render _all_ the messages.
     // forEach message in ________ renderMessages
     // call renderMessage(message)
-    if($('#rooms select').val())
-
-    Messages._data.forEach(message => {
+    if($('#rooms select').val()) {
+      for (var i = 0; i < Messages._data.length; i++) {
+        var current = Messages._data[i]
+        if (current.roomname === $('#rooms select').val()) {
+          this.renderMessage(current)
+          console.log(current)
+        }
+      }
+    } else {
+      Messages._data.forEach(message => {
       this.renderMessage(message)
     })
+    }
+
+
   },
 
   renderMessage: function(message) {
-
-    this.$chats.html = ''
     // TODO: Render a single message.
 
     var $messageContainer = $(`<div class="messageContainer"></div>`)
+    var $userContainer = $(`<div class="userContainer">user: ${message.username}</div>`)
+    // $userContainer.on('click', function(
+    //   this.css.style= {color : yellow};
+    // ))
     var $textContainer = $(`<div class="textContainer">${message.text}</div>`)
-    var $userContainer = $(`<div class="textContainer">${message.username}</div>`)
+    var $roomContainer = $(`<div class="roomContainer">room: ${message.username}</div>`)
 
-    $messageContainer.append($textContainer, $userContainer)
+
+    $messageContainer.append($userContainer, $textContainer, $roomContainer)
     this.$chats.append($messageContainer)
     // var $message = $('<span></span>');
     // var $text = $(`<li>${message.text}</li>,`)
